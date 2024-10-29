@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import * as C from "./styles";
+import './styles.css'; // Importando o CSS
 import { Link, useNavigate } from "react-router-dom";  
 import useAuth from "../hooks/useAuth";
 
@@ -30,9 +30,9 @@ const Signin = () => {
   };
 
   return (
-    <C.Container>
-      <C.Label>SISTEMA DE LOGIN</C.Label>
-      <C.Content>
+    <div className="container"> {/* Usando a classe CSS */}
+      <label className="label">SISTEMA DE LOGIN</label> {/* Usando a classe CSS */}
+      <div className="content"> {/* Usando a classe CSS */}
         <Input
           type="email"
           placeholder="Digite seu E-mail"
@@ -45,16 +45,16 @@ const Signin = () => {
           value={senha}
           onChange={(e) => [setSenha(e.target.value), setError("")]}
         />
-        <C.labelError>{error}</C.labelError>
-        <Button Text="Entrar" onClick={handleLogin} />
-        <C.LabelSignup>
+        <label className="labelError">{error}</label> {/* Usando a classe CSS */}
+        <Button text="Entrar" onClick={handleLogin} /> {/* Corrigido para 'text' em vez de 'Text' */}
+        <label className="labelSignup"> {/* Usando a classe CSS */}
           Não tem uma conta?
-          <C.Strong>
+          <strong className="strong"> {/* Usando a classe CSS */}
             <Link to="/signup">&nbsp;Registre-se</Link>
-          </C.Strong>
-        </C.LabelSignup>
-      </C.Content>
-    </C.Container>
+          </strong>
+        </label>
+      </div>
+    </div>
   );
 };
 

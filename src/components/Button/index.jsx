@@ -1,11 +1,11 @@
 import React from "react";
-import * as C from "./styles";
+import './styles.css'; // Importe o arquivo CSS
 
 const Button = ({ text, onClick, type = "button" }) => {
   return (
-    <C.Button type={type} onClick={onClick}>
+    <button className="button" type={type} onClick={onClick}>
       {text}
-    </C.Button> 
+    </button>
   );
 };
 
